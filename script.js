@@ -1,8 +1,7 @@
 function game(){
-
-for(let i = 0; i < 5; i++){
 let playerScore = 0, computerScore = 0;
 
+for(let i = 0; i < 5; i++){
 let playerSelection = prompt("Rock, Paper, or Scissors")
 
 function playRound(playerSelection, computerSelection){
