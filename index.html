@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div class="container">
+        <div class="bx score-box">
+            <ul>
+                <li class="scoreTitle">Player Score</li>
+                <li id="playerScoreBoard"></li>
+            </ul>
+            <ul>
+                <li class="scoreTitle">Computer Score</li>
+                <li id="computerScoreBoard"></li>
+            </ul>
+        </div>
+        <div class="bx selection-box">
+            <div class="bx competitors-box">
+                <div class="bx player-box">
+                    <h1>Player Selection:</h1> 
+                    <h2 id="playerSelection"></h2>
+                </div>
+                <div class="bx computer-box">
+                    <h1>Computer Selection:</h1>
+                    <h2 id="computerSelection"></h2>
+                </div>
+            </div>
+            <div class="bx outcome-box">
+                <h1 class="outcome"></h1>
+            </div>
+        </div>
+        <div class="bx button-box">
+            <button type="button" class="rainbow rainbow-3" id="rock">Rock</button>
+            <button type="button" class="rainbow rainbow-3" id="paper">Paper</button>
+            <button type="button" class="rainbow rainbow-3" id="scissors">Scissors</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

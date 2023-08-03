@@ -1,42 +1,64 @@
-function game(){
 let playerScore = 0, computerScore = 0;
 
-for(let i = 0; i < 5; i++){
-let playerSelection = prompt("Rock, Paper, or Scissors")
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button)=>{
+    button.addEventListener("click", function(){
+    let compSelection = getComputedSelection();
+    let playerSelection = this.id;
+    playRound(playerSelection, compSelection);
+});
+})
+
+
+
 
 function playRound(playerSelection, computerSelection){
 
-
-    let player = playerSelection.toLowerCase();
+    let player = playerSelection;
+    const playerSCoreBoard = document.querySelector("#playerScoreBoard");
+    const computerSCoreBoard = document.querySelector("#computerScoreBoard");
+    const playerChoice = document.querySelector("#playerSelection");
+    const computerChoice = document.querySelector("#computerSelection");
+    const outcome = document.querySelector(".outcome");
 
     if (player == "rock" && computerSelection == "scissors"){
         playerScore++;
-        console.log("Player: "+ player + " Computer: "+ computerSelection);
-        console.log("You Win!");
-        console.log("Player: "+ playerScore + " Computer: "+ computerScore);
+        outcome.innerHTML = "You Win!";
+        playerChoice.innerHTML = player;
+        computerChoice.innerHTML = computerSelection;
+        playerSCoreBoard.innerHTML = playerScore;
+        computerSCoreBoard.innerHTML = computerScore;
     }
     else if (player == "scissors" && computerSelection == "paper"){
         playerScore++;
-        console.log("Player: "+ player + " Computer: "+ computerSelection);
-        console.log("You Win!");
-        console.log("Player: "+ playerScore + " Computer: "+ computerScore);
+        outcome.innerHTML = "You Win!";
+        playerChoice.innerHTML = player;
+        computerChoice.innerHTML = computerSelection;
+        playerSCoreBoard.innerHTML = playerScore;
+        computerSCoreBoard.innerHTML = computerScore;
     }
     else if (player == "paper" && computerSelection == "rock"){
         playerScore++;
-        console.log("Player: "+ player + " Computer: "+ computerSelection);
-        console.log("You Win!");
-        console.log("Player: "+ playerScore + " Computer: "+ computerScore);
+        outcome.innerHTML = "You Win!";
+        playerChoice.innerHTML = player;
+        computerChoice.innerHTML = computerSelection;
+        playerSCoreBoard.innerHTML = playerScore;
+        computerSCoreBoard.innerHTML = computerScore;
     }
     else if (player == computerSelection){
-        console.log("Player: "+ player + " Computer: "+ computerSelection);
-        console.log("Draw");
-        console.log("Player: "+ playerScore + " Computer: "+ computerScore);
+        outcome.innerHTML = "Draw!";
+        playerChoice.innerHTML = player;
+        computerChoice.innerHTML = computerSelection;
+        playerSCoreBoard.innerHTML = playerScore;
+        computerSCoreBoard.innerHTML = computerScore;
     }
     else{
         computerScore++;
-        console.log("Player: "+ player + " Computer: "+ computerSelection);
-        console.log("You Lose!");
-        console.log("Player: "+ playerScore + " Computer: "+ computerScore);
+        outcome.innerHTML = "You Lose!";
+        playerChoice.innerHTML = player;
+        computerChoice.innerHTML = computerSelection;
+        playerSCoreBoard.innerHTML = playerScore;
+        computerSCoreBoard.innerHTML = computerScore;
     }
 }
 
@@ -59,8 +81,4 @@ function getComputedSelection(){
     return compSeletion;
 }
 
-const computerSelection = getComputedSelection();
-
-console.log(playRound(playerSelection, computerSelection));
-}}
 
