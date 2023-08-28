@@ -1,5 +1,13 @@
 let playerScore = 0, computerScore = 0;
 
+const playerSCoreBoard = document.querySelector("#playerScoreBoard");
+const computerSCoreBoard = document.querySelector("#computerScoreBoard");
+const playerChoice = document.querySelector("#player-img");
+const computerChoice = document.querySelector("#comp-img");
+const outcome = document.querySelector(".outcome");
+const pImg = document.createElement("img");
+const cImg = document.createElement("img");
+
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button)=>{
     button.addEventListener("click", function(){
@@ -11,52 +19,56 @@ buttons.forEach((button)=>{
 
 
 
-
 function playRound(playerSelection, computerSelection){
 
     let player = playerSelection;
-    const playerSCoreBoard = document.querySelector("#playerScoreBoard");
-    const computerSCoreBoard = document.querySelector("#computerScoreBoard");
-    const playerChoice = document.querySelector("#playerSelection");
-    const computerChoice = document.querySelector("#computerSelection");
-    const outcome = document.querySelector(".outcome");
 
     if (player == "rock" && computerSelection == "scissors"){
         playerScore++;
         outcome.innerHTML = "You Win!";
-        playerChoice.innerHTML = player;
-        computerChoice.innerHTML = computerSelection;
+        pImg.src = `images/${player}.png`;
+        playerChoice.appendChild(pImg);
+        cImg.src = `images/${computerSelection}.png`;
+        computerChoice.appendChild(cImg);
         playerSCoreBoard.innerHTML = playerScore;
         computerSCoreBoard.innerHTML = computerScore;
     }
     else if (player == "scissors" && computerSelection == "paper"){
         playerScore++;
         outcome.innerHTML = "You Win!";
-        playerChoice.innerHTML = player;
-        computerChoice.innerHTML = computerSelection;
+        pImg.src = `images/${player}.png`;
+        playerChoice.appendChild(pImg);
+        cImg.src = `images/${computerSelection}.png`;
+        computerChoice.appendChild(cImg);
         playerSCoreBoard.innerHTML = playerScore;
         computerSCoreBoard.innerHTML = computerScore;
     }
     else if (player == "paper" && computerSelection == "rock"){
         playerScore++;
         outcome.innerHTML = "You Win!";
-        playerChoice.innerHTML = player;
-        computerChoice.innerHTML = computerSelection;
+        pImg.src = `images/${player}.png`;
+        playerChoice.appendChild(pImg);
+        cImg.src = `images/${computerSelection}.png`;
+        computerChoice.appendChild(cImg);
         playerSCoreBoard.innerHTML = playerScore;
         computerSCoreBoard.innerHTML = computerScore;
     }
     else if (player == computerSelection){
         outcome.innerHTML = "Draw!";
-        playerChoice.innerHTML = player;
-        computerChoice.innerHTML = computerSelection;
+        pImg.src = `images/${player}.png`;
+        playerChoice.appendChild(pImg);
+        cImg.src = `images/${computerSelection}.png`;
+        computerChoice.appendChild(cImg);
         playerSCoreBoard.innerHTML = playerScore;
         computerSCoreBoard.innerHTML = computerScore;
     }
     else{
         computerScore++;
         outcome.innerHTML = "You Lose!";
-        playerChoice.innerHTML = player;
-        computerChoice.innerHTML = computerSelection;
+        pImg.src = `images/${player}.png`;
+        playerChoice.appendChild(pImg);
+        cImg.src = `images/${computerSelection}.png`;
+        computerChoice.appendChild(cImg);
         playerSCoreBoard.innerHTML = playerScore;
         computerSCoreBoard.innerHTML = computerScore;
     }
